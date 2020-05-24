@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "07xpG4hE9nY/AW6XzycMv0bOzQYD2WwLmFWRoiOVZym7rigazRcqkthmK++Xp+wIPi26U9t6Gto4X51TfkAAUA==",
+  "dgSpecHash": "VIEuIYuA+96K6xuwunxmEeGmBbQKaXu8sZ7pnjXmIrBhuKgVpE6deHD4j9LDZ7q6Zd+Ye9J63UlkjRDca2kBxw==",
   "success": true,
   "projectFilePath": "/home/joe/Documents/QuickDoc/QuickDoc.csproj",
   "expectedPackageFiles": [
-    "/home/joe/.nuget/packages/microsoft.netcore.app.runtime.win-x64/3.1.4/microsoft.netcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
-    "/home/joe/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/3.1.4/microsoft.aspnetcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
-    "/home/joe/.nuget/packages/microsoft.netcore.app.host.win-x64/3.1.4/microsoft.netcore.app.host.win-x64.3.1.4.nupkg.sha512",
+    "/home/joe/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/3.1.4/microsoft.netcore.app.runtime.linux-x64.3.1.4.nupkg.sha512",
+    "/home/joe/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/3.1.4/microsoft.aspnetcore.app.runtime.linux-x64.3.1.4.nupkg.sha512",
     "/home/joe/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.2/microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
