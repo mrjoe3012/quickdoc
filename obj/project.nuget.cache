@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "d9i/wWyuG8p6yvoydJ8IVV7VheCBFbm710YbE7M1DfVeWdetZL6G1TDVchAvz+vE1/b8eRKQ8VBJOHchvW/CYw==",
+  "dgSpecHash": "07xpG4hE9nY/AW6XzycMv0bOzQYD2WwLmFWRoiOVZym7rigazRcqkthmK++Xp+wIPi26U9t6Gto4X51TfkAAUA==",
   "success": true,
   "projectFilePath": "/home/joe/Documents/QuickDoc/QuickDoc.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/joe/.nuget/packages/microsoft.netcore.app.runtime.win-x64/3.1.4/microsoft.netcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
+    "/home/joe/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/3.1.4/microsoft.aspnetcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
+    "/home/joe/.nuget/packages/microsoft.netcore.app.host.win-x64/3.1.4/microsoft.netcore.app.host.win-x64.3.1.4.nupkg.sha512",
+    "/home/joe/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.2/microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
