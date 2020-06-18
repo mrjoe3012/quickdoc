@@ -1,32 +1,37 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {},
-    ".NETCoreApp,Version=v3.1/linux-x64": {}
+    ".NETCoreApp,Version=v3.1": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "/home/joe/.nuget/packages/": {}
+    "C:\\Users\\Joe\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "2.1.1",
     "restore": {
-      "projectUniqueName": "/home/joe/Documents/QuickDoc/QuickDoc.csproj",
+      "projectUniqueName": "C:\\Users\\Joe\\source\\repos\\quickdoc\\QuickDoc.csproj",
       "projectName": "QuickDoc",
-      "projectPath": "/home/joe/Documents/QuickDoc/QuickDoc.csproj",
-      "packagesPath": "/home/joe/.nuget/packages/",
-      "outputPath": "/home/joe/Documents/QuickDoc/obj/",
+      "projectPath": "C:\\Users\\Joe\\source\\repos\\quickdoc\\QuickDoc.csproj",
+      "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Joe\\source\\repos\\quickdoc\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/joe/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -52,31 +57,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          },
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-            "version": "[3.1.4, 3.1.4]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.linux-x64",
-            "version": "[3.1.4, 3.1.4]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "linux-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

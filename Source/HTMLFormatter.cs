@@ -1,16 +1,100 @@
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace QuickDoc
 {
     //@qdclass(Formats to a html document.)
     public class HTMLFormatter : Formatter
     {
+        private static char[] illegals = new char[2] { '<', '>', '\"', '&' };
+        private static Dictionary<char, string> escapes = new Dictionary<char, string>() { { illegals[0], "&lt;" }, { illegals[1], "&gt;" }, { illegals[2], "&quot;" }, { illegals[3], "&amp;" } };
+
         private List<string> buffer = new List<string>();
+
+        public string EscapeIllegals(string value)
+        {
+            string newString = "";
+
+            foreach(char c in value)
+            {
+                if (illegals.Contains(c))
+                    newString += escapes[c];
+                else
+                    newString += c;
+            }
+
+            return newString;
+        }
+
+        private DataType EscapeData(DataType type)
+        {
+            if (typeof(Field).IsAssignableFrom(type.GetType()))
+                return (DataType)EscapeField((Field)type);
+            else if (typeof(Method).IsAssignableFrom(type.GetType()))
+                return (DataType)EscapeMethod((Method)type);
+            else if (typeof(Class).IsAssignableFrom(type.GetType()))
+                return (DataType)EscapeClass((Class)type);
+
+            return null;
+        }
+
+        private Field EscapeField(Field field)
+        {
+            field.name = EscapeIllegals(field.name);
+            field.description = EscapeIllegals(field.description);
+            field.type = EscapeIllegals(field.type);
+
+            return field;
+        }
+
+        private Method EscapeMethod(Method method)
+        {
+            method.name = EscapeIllegals(method.name);
+            method.description = EscapeIllegals(method.description);
+            method.returnType = EscapeIllegals(method.returnType);
+
+            for (int i = 0; i < method.parameters.Count; i++)
+            {
+                method.parameters[i] = EscapeField(method.parameters[i]);
+            }
+
+            return method;
+        }
+
+        private Class EscapeClass(Class c)
+        {
+            c.name = EscapeIllegals(c.name);
+            c.description = EscapeIllegals(c.description);
+
+            for (int i = 0; i < c.memberFields.Count; i++)
+            {
+                c.memberFields[i] = EscapeField(c.memberFields[i]);
+            }
+            for (int i = 0; i < c.memberMethods.Count; i++)
+            {
+                c.memberMethods[i] = EscapeMethod(c.memberMethods[i]);
+            }
+
+            return c;
+        }
 
         public override void FormatSource(AnalyzedSource source, ExecutionRequest executionRequest)
         {
-            
+
+            // escaping characters
+
+            List<DataType> types = new List<DataType>();
+
+            types.AddRange(source.fields);
+            types.AddRange(source.methods);
+            types.AddRange(source.classes);
+
+            for (int i = 0; i < types.Count; i++)
+            {
+                EscapeData(types[i]);
+            }
+
             AddHead(executionRequest);
 
             buffer.Add("<html>");

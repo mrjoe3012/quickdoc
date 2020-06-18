@@ -7,26 +7,48 @@ namespace QuickDoc
     //@qdclass(Handles the entry of the program.)
     class Entry
     {
-        static void Main(string[] args)
+        public static ExecutionRequest Request { get; set; }
+
+        static int Main(string[] args)
         {
-            
             string[] options = GetOptions(args);          
 
+            if(options.Length == 0)
+            {
+                Console.WriteLine("Invalid arguments passed.");
+                PrintHelp(true);
+                return -1;
+            }
 
             string[] sourcefiles = null;
             string output = "";
 
+            ExecutionRequest request;
 
-            ExecutionRequest request = new ExecutionRequest(options, null, null);
+            try
+            { request = new ExecutionRequest(options, null, null); }
+            catch (ExecutionRequest.InvalidOptionException e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+            
 
             if(request.options.Contains(ExecutionRequest.Option.HELP))
             {
                 PrintHelp();
             }
+            else if(args.Length < 3)
+            {
+                Console.WriteLine("Invalid arguments passed.");
+                PrintHelp(true);
+                return -1;
+            }
             else
             {
             GetArguments(args, out sourcefiles, out output);
             request = new ExecutionRequest(options, sourcefiles, output);
+            Request = request;
 
             SourceAnalyzer analyzer = null;
 
@@ -39,12 +61,32 @@ namespace QuickDoc
                 analyzer = new CSAnalyzer();
             }
 
-            AnalyzedSource source = analyzer.AnalyzeCode(request);
+            if(analyzer == null)
+            {
+                Console.WriteLine("Cannot create documentation for these types of files. Check the documentation for supported file extensions.");
+                return -1;
+            }
+
+            AnalyzedSource source;
+
+            try
+            {
+                source = analyzer.AnalyzeCode(request);
+            }
+            catch(SourceAnalyzer.UnclosedClassFlagException e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+
+            if (source == null)
+                return -1;
 
             Formatter formatter = GetFormatter(request);
             
             formatter.FormatSource(source, request);
             }
+            return 0;
         }
         //@qdmfunction(Returns the formatter depending on the option.*Formatter)
         //@qdparam(request*The execution request*ExecutionRequest)

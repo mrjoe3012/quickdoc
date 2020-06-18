@@ -17,6 +17,13 @@ namespace QuickDoc
 
             foreach(string filePath in request.sourceFilePaths)
             {
+
+                if(!File.Exists(filePath))
+                {
+                    Console.WriteLine(String.Format("Error. The file \"{0}\" does not exist or could not be found.", Path.GetFullPath(filePath)));
+                    return null;
+                }
+
                 string[] fileLines = File.ReadAllLines(filePath);
                 lines = lines.Join(fileLines);
             }
@@ -153,14 +160,14 @@ namespace QuickDoc
             }
 
             string[] temp = declLine.Split(' ');
+
             field.name = temp[temp.Length-1];
             field.name = field.name.Replace(';', ' ');
 
-            for(int i = 0; i < temp.Length-1;i++)
+            for (int i = 0; i < temp.Length-1;i++)
             {
                 field.type += temp[i] + " ";
-            }
-
+            }          
             return field;
         }
 
@@ -301,6 +308,13 @@ namespace QuickDoc
             c.description += description;
 
             int classEnd = GetNextEndIndex(lines, flag.line, "//");
+
+            if(classEnd == -1)
+            {
+                int line = 0;
+                string fileName = GetFileNameByLine(flag.line+1, Entry.Request, out line);
+                throw new UnclosedClassFlagException(line, fileName);
+            }
 
             string[] body = new string[(classEnd-1) - (flag.line+1)];
 

@@ -237,6 +237,14 @@ namespace QuickDoc
 
             int endIndex = GetNextEndIndex(lines, flag.line, "#");
 
+            if (endIndex == -1)
+            {
+                int line;
+                string fileName = GetFileNameByLine(flag.line + 1, Entry.Request, out line);
+                throw new UnclosedClassFlagException(line, fileName);
+            }
+
+
             string[] body = new string[(endIndex-1) - (flag.line+1)];
             for (int i  = flag.line+2, j = 0; i < endIndex; i++, j++)
             {

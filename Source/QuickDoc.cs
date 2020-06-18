@@ -5,7 +5,7 @@ namespace QuickDoc
     public static class QuickDoc
     {
         //@qdmfield(The program version.)
-        public const string VERSION = "2.1.1";
+        public const string VERSION = "2.1.2";
     }
     //@qdend
 

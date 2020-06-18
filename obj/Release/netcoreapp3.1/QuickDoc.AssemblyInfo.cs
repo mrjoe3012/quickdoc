@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickDoc")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("2.1.1.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.1.1")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickDoc")]

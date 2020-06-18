@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace QuickDoc
 {
@@ -27,13 +28,29 @@ namespace QuickDoc
         public readonly string outputDirectory;
         //@qdmfield(The options enabled by the user.)
         public readonly Option[] options;
+
+        public class InvalidOptionException : Exception
+        {
+            public InvalidOptionException(string option) : base(string.Format("Invalid option \"{0}\"", option))
+            {
+
+            }
+        }
+
         public ExecutionRequest(string[] options, string[] sourceFiles, string outputDir)
         {
             Option[] convertedOptions = new Option[options.Length];
 
             for (int i = 0; i < options.Length; i++)
             {
-                convertedOptions[i] = OptionArgument[options[i]];
+                try
+                {
+                    convertedOptions[i] = OptionArgument[options[i]];
+                }
+                catch(KeyNotFoundException)
+                {
+                    throw new InvalidOptionException(options[i]);
+                }
             }
 
             this.options = convertedOptions;

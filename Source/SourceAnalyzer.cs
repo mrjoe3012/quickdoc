@@ -11,6 +11,14 @@ namespace QuickDoc
         {
         }
 
+        public class UnclosedClassFlagException : Exception
+        {
+            public UnclosedClassFlagException(int openLine, string fileName) : base(string.Format("The file \"{0}\" has an unclosed flag opened at line {1}", fileName, openLine.ToString()))
+            {
+
+            }
+        }
+
         protected struct Flag
         {
             public enum FlagType
@@ -49,6 +57,38 @@ namespace QuickDoc
             return newString;
         }
 
+        //@qdmfunction(Uses the execution request to determine the file name of the passed line.*string)
+        //@qdparam(line*The line in the master file.*int)
+        //@qdparam(request*The execution request context.*ExecutionRequest)
+        protected string GetFileNameByLine(int line, ExecutionRequest request, out int localLine)
+        {
+            string name = null;
+            localLine = -1;
+
+            int[] lineCounts = new int[request.sourceFilePaths.Length];
+
+            for (int i = 0; i < request.sourceFilePaths.Length; i++)
+            {
+                lineCounts[i] = File.ReadAllLines(request.sourceFilePaths[i]).Length;
+            }
+
+            int total = 0, lastTotal = 0;
+            for (int i = 0; i < lineCounts.Length; i++)
+            {
+                total += lineCounts[i];
+
+                if (line > lastTotal && line < total)
+                {
+                    name = request.sourceFilePaths[i];
+                    localLine = line - lastTotal;
+                }
+
+                lastTotal = total;
+            }
+
+            return name;
+        }
+
         //@qdmfunction(Returns the index of the first @qdend flag found in the file.*int)
         //@qdparam(lines*The lines to search through.*string[])
         //@qdparam(startIndex*The index to start searching from.*int)
@@ -69,6 +109,7 @@ namespace QuickDoc
                 catch(ArgumentOutOfRangeException)
                 {}
             }
+
             return endIndex;
         }
 

@@ -11,3 +11,16 @@
 /home/joe/Documents/QuickDoc/obj/Debug/netcoreapp3.1/QuickDoc.dll
 /home/joe/Documents/QuickDoc/obj/Debug/netcoreapp3.1/QuickDoc.pdb
 /home/joe/Documents/QuickDoc/obj/Debug/netcoreapp3.1/QuickDoc.genruntimeconfig.cache
+C:\Users\Joe\source\repos\quickdoc\bin\Debug\netcoreapp3.1\QuickDoc.exe
+C:\Users\Joe\source\repos\quickdoc\bin\Debug\netcoreapp3.1\QuickDoc.deps.json
+C:\Users\Joe\source\repos\quickdoc\bin\Debug\netcoreapp3.1\QuickDoc.runtimeconfig.json
+C:\Users\Joe\source\repos\quickdoc\bin\Debug\netcoreapp3.1\QuickDoc.runtimeconfig.dev.json
+C:\Users\Joe\source\repos\quickdoc\bin\Debug\netcoreapp3.1\QuickDoc.dll
+C:\Users\Joe\source\repos\quickdoc\bin\Debug\netcoreapp3.1\QuickDoc.pdb
+C:\Users\Joe\source\repos\quickdoc\obj\Debug\netcoreapp3.1\QuickDoc.csprojAssemblyReference.cache
+C:\Users\Joe\source\repos\quickdoc\obj\Debug\netcoreapp3.1\QuickDoc.AssemblyInfoInputs.cache
+C:\Users\Joe\source\repos\quickdoc\obj\Debug\netcoreapp3.1\QuickDoc.AssemblyInfo.cs
+C:\Users\Joe\source\repos\quickdoc\obj\Debug\netcoreapp3.1\QuickDoc.csproj.CoreCompileInputs.cache
+C:\Users\Joe\source\repos\quickdoc\obj\Debug\netcoreapp3.1\QuickDoc.dll
+C:\Users\Joe\source\repos\quickdoc\obj\Debug\netcoreapp3.1\QuickDoc.pdb
+C:\Users\Joe\source\repos\quickdoc\obj\Debug\netcoreapp3.1\QuickDoc.genruntimeconfig.cache
