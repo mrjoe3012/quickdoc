@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\Joe\\source\\repos\\quickdoc\\QuickDoc.csproj": {
-      "version": "2.1.1",
+      "version": "2.1.2",
       "restore": {
         "projectUniqueName": "C:\\Users\\Joe\\source\\repos\\quickdoc\\QuickDoc.csproj",
         "projectName": "QuickDoc",
@@ -50,12 +50,31 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[3.1.5, 3.1.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[3.1.5, 3.1.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[3.1.5, 3.1.5]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }

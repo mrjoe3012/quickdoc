@@ -7,7 +7,7 @@ namespace QuickDoc
     //@qdclass(Formats to a html document.)
     public class HTMLFormatter : Formatter
     {
-        private static char[] illegals = new char[2] { '<', '>', '\"', '&' };
+        private static char[] illegals = new char[4] { '<', '>', '\"', '&' };
         private static Dictionary<char, string> escapes = new Dictionary<char, string>() { { illegals[0], "&lt;" }, { illegals[1], "&gt;" }, { illegals[2], "&quot;" }, { illegals[3], "&amp;" } };
 
         private List<string> buffer = new List<string>();

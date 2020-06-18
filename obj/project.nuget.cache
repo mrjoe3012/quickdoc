@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mIqEGZWYELsZKXhw0oa7C3YJeh8V96A/b/iU0DtVOkn4xh+muaDyL5GpouOBhQSRHuUf5GY3FX9mGEM8UXDyxQ==",
+  "dgSpecHash": "HI4ssagCzkRR2QvcaLG4bNVQAdJ+A/gtuS8WNjNgpVCTQU8on50c/kSyBloLuLT5WPfawfGw89SQbLT834aTvg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Joe\\source\\repos\\quickdoc\\QuickDoc.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\3.1.5\\microsoft.netcore.app.runtime.linux-x64.3.1.5.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\3.1.5\\microsoft.aspnetcore.app.runtime.linux-x64.3.1.5.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.5\\microsoft.netcore.app.host.linux-x64.3.1.5.nupkg.sha512"
+  ],
   "logs": []
 }
